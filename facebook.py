@@ -13,7 +13,7 @@ class Facebook:
         print()
 
 def print_menu():
-    print("Choose the menu you wnat below:")
+    print("Choose the menu you want below:")
     print("1:create   2:read all   3:read by condition   4:exit")
     number = int(input("choose your menu>>")) # 선택할 메뉴
     return number
@@ -31,7 +31,7 @@ def print_info(people):
         person.printAll()
 
 def search_info(people):
-    keyword = input('what keyword do you search?')
+    keyword = input('what keyword do you want to search?')
     search = {}
 
     for person in people:
@@ -39,25 +39,25 @@ def search_info(people):
         if keyword in person_list:
             search[person.mobile] = keyword
 
-    print(search)
     mobile_list = list(search.keys())
     new_list = []
     for person in people:
         if person.mobile in mobile_list:
             new_list.append(person)
 
-    print("\nThere is(are) {} item(s)\n".format(len(mobile_list)))
     if len(mobile_list) == 0:
         print("There is no item")
     else:
+        print("\nThere is(are) {} item(s)\n".format(len(mobile_list)))
         print_info(new_list)
 
 def main():
-    a = Facebook("lee", "km", "123", "asdfas")
-    b = Facebook("km", "lee", "456", "bvdsa")
-    c = Facebook("cho", "ws", "2525", "lee")
-    d = Facebook("ws", "cho", "64", "okjawef")
-    people = [a, b, c, d]
+    # a = Facebook("lee", "km", "123", "asdfas")
+    # b = Facebook("km", "lee", "456", "bvdsa")
+    # c = Facebook("cho", "ws", "2525", "lee")
+    # d = Facebook("ws", "cho", "64", "okjawef")
+    # people = [a, b, c, d] # test data
+    people = []
     while True:
         print()
         try:

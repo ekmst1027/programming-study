@@ -52,7 +52,7 @@ def makeMove(board, chests, x, y):
 
 
     smallestDistance = 100
-    for cs, cy in chests:
+    for cx, cy in chests:
         if abs(cx - x) > abs(cy - y):
             distance = abs(cx - x)
         else:
@@ -82,8 +82,7 @@ def enterPlayerMove():
             sys.exit()
 
         move = move.split()
-        if len(move) == 2 and move[0].isdigit() and move[1].isdigit() and
-        isValidMove(int(move[0]), int(move[1])):
+        if len(move) == 2 and move[0].isdigit() and move[1].isdigit() and isValidMove(int(move[0]), int(move[1])):
             return [int(move[0]), int(move[1])]
         print("Enter a number from 0 to 59, a space, then a number from 0 to 14")
 
@@ -142,7 +141,7 @@ def showInstructions():
 print('S O N A R !')
 print()
 print("Would you like to view the insructions? (yes/no)")
-if input().loser().startswith('y'):
+if input().lower().startswith('y'):
     showInstructions()
 
 while True:
@@ -169,7 +168,7 @@ while True:
         else:
             if moveResult == "You have found a sunken treasure chest!":
                 for x, y in previousMoves:
-                    makeMove(tehBoard, theChests, x, y)
+                    makeMove(theBoard, theChests, x, y)
             drawBoard(theBoard)
             print(moveResult)
 
